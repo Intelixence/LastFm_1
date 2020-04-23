@@ -19,6 +19,26 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:singleLine="false"
+            android:text="Rank 0"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="14sp"
+            app:fontFamily="sans-serif-condensed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView4"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
             android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -27,6 +47,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
             android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
             android:singleLine="false"
             android:text="Track"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -47,6 +68,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="15dp"
             android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
             android:singleLine="false"
             android:text="Artist"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -81,9 +103,8 @@
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="15dp"
             android:layout_marginBottom="15dp"
+            android:gravity="center_vertical"
             android:singleLine="false"
             android:text="Duration: 0:00"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -91,7 +112,7 @@
             android:textSize="14sp"
             app:fontFamily="sans-serif-condensed"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView4"
+            app:layout_constraintEnd_toStartOf="@+id/textView6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
