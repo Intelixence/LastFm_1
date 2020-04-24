@@ -32,7 +32,7 @@ public class CustomEasyReqFilter extends EasyReqFilter {
 
     @Override
     public void Filter_error(final Context context, VolleyError volleyError, int code_request, EasyReq.Event event) {
-        CustomLog.i("Auto_clasificar", "Filter_error:---------------------------------------------------------------------------------------------");
+        CustomLog.i("Auto_clasificar", "Filter_error:---------------------------------------------------------------------------------------------"+volleyError);
         if (Network.enabled(context)){
             if (Network.internet_access(context)){
                 try {
