@@ -86,7 +86,7 @@
             android:layout_height="0dp"
             android:background="@drawable/btn_square_blue"
             android:gravity="center_horizontal|center_vertical"
-            android:text="Show details"
+            android:text="Show all\ndetails"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@android:color/white"
             android:textSize="21sp"

@@ -7,9 +7,9 @@ public class ItemTopTrack {
     private int rank_track;
     private String track_name, track_duration, track_url, artist_name, artist_url;
     private int track_listeners;
-    private Bitmap bm_image;
+    private String url_image_track;
 
-    public ItemTopTrack(int rank_track, String track_name, String track_duration, String track_url, String artist_name, String artist_url, int track_listeners, Bitmap bm_image) {
+    public ItemTopTrack(int rank_track, String track_name, String track_duration, String track_url, String artist_name, String artist_url, int track_listeners, String url_image_track) {
         this.rank_track = rank_track;
         this.track_name = track_name;
         this.track_duration = track_duration;
@@ -17,7 +17,7 @@ public class ItemTopTrack {
         this.artist_name = artist_name;
         this.artist_url = artist_url;
         this.track_listeners = track_listeners;
-        this.bm_image = bm_image;
+        this.url_image_track = url_image_track;
     }
 
     public int getRank_track() {
@@ -48,7 +48,7 @@ public class ItemTopTrack {
         return track_listeners;
     }
 
-    public Bitmap getBm_image() {
-        return bm_image;
+    public String getUrl_image_track() {
+        return url_image_track;
     }
 }

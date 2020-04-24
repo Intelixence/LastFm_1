@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -51,6 +53,14 @@ public class Core extends AppCompatActivity implements EasyReq.Event {
             public void End() {
             }
         }, 13000);
+        tv_url.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://www.last.fm");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -58,17 +68,18 @@ public class Core extends AppCompatActivity implements EasyReq.Event {
     public void Response(String response, int code_request) {
         try {
             JSONArray json_tracks = new JSONObject(new String(response.getBytes("ISO-8859-1"), "UTF-8")).getJSONObject("tracks").getJSONArray("track");
-            ArrayList<ItemTopTrack> itemsTopTracks = new ArrayList<>();
+            final ArrayList<ItemTopTrack> itemsTopTracks = new ArrayList<>();
             for (int i = 0; i < json_tracks.length(); i++){
                 CustomLog.i("CoreResponse", json_tracks.getJSONObject(i).toString()+"\n");
-                int rank_track = (json_tracks.getJSONObject(i).getJSONObject("@attr").getInt("rank"))+1;
-                String track_name = json_tracks.getJSONObject(i).getString("name");
-                int track_duration = json_tracks.getJSONObject(i).getInt("duration");
-                String track_url = json_tracks.getJSONObject(i).getString("url");
-                String artist_name = json_tracks.getJSONObject(i).getJSONObject("artist").getString("name");
-                String artist_url = json_tracks.getJSONObject(i).getJSONObject("artist").getString("url");
-                int track_listeners = json_tracks.getJSONObject(i).getInt("listeners");
-                itemsTopTracks.add(new ItemTopTrack(rank_track, track_name, CustomTime.minutes_seconds(track_duration),track_url,artist_name, artist_url, track_listeners, null));
+                final int rank_track = (json_tracks.getJSONObject(i).getJSONObject("@attr").getInt("rank"))+1;
+                final String track_name = json_tracks.getJSONObject(i).getString("name");
+                final int track_duration = json_tracks.getJSONObject(i).getInt("duration");
+                final String track_url = json_tracks.getJSONObject(i).getString("url");
+                final String artist_name = json_tracks.getJSONObject(i).getJSONObject("artist").getString("name");
+                final String artist_url = json_tracks.getJSONObject(i).getJSONObject("artist").getString("url");
+                final int track_listeners = json_tracks.getJSONObject(i).getInt("listeners");
+                String url_image = json_tracks.getJSONObject(i).getJSONArray("image").getJSONObject(1).getString("#text");
+                itemsTopTracks.add(new ItemTopTrack(rank_track, track_name, CustomTime.minutes_seconds(track_duration),track_url,artist_name, artist_url, track_listeners, url_image));
             }
             ListViewTopTrack listViewTopTrack = new ListViewTopTrack(this, itemsTopTracks);
             lv_top_tracks.setAdapter(listViewTopTrack);

@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.intelixence.lastfm1.CustomUi.Modals.ModalDetails;
 import com.intelixence.lastfm1.R;
 
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ public class ListViewTopTrack extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         if ( convertView == null ) {
             LayoutInflater inflater = activity.getLayoutInflater();
             convertView = inflater.inflate(R.layout.item_listview_top_tracks, null);
@@ -58,7 +59,7 @@ public class ListViewTopTrack extends BaseAdapter {
         btn_show_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                ModalDetails.ShowModalDetails(activity, itemsTopTrack.get(position));
             }
         });
         return convertView;
