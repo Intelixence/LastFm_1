@@ -3,6 +3,7 @@ package com.intelixence.lastfm1.Activitys;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -45,15 +46,7 @@ public class Core extends AppCompatActivity implements EasyReq.Event {
         lv_top_tracks = findViewById(R.id.ac_lv_top_tracks);
 
         //process
-        EasyReq.POST_FORM_URL_ENCODED(this, Required.getUrl_geo_get_top_tracks(), new CustomEasyReqFilter(), 1, null, this, new EasyReq.State() {
-            @Override
-            public void Start() {
-                ProgressBarGeneral.ShowProgressBarGeneral(Core.this, "Cargando");
-            }
-            @Override
-            public void End() {
-            }
-        }, 13000);
+        getTopTracks();
         tv_url.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +56,18 @@ public class Core extends AppCompatActivity implements EasyReq.Event {
             }
         });
 
+    }
+
+    public void getTopTracks(){
+        EasyReq.POST_FORM_URL_ENCODED(this, Required.getUrl_geo_get_top_tracks(), new CustomEasyReqFilter(), 1, null, this, new EasyReq.State() {
+            @Override
+            public void Start() {
+                ProgressBarGeneral.ShowProgressBarGeneral(Core.this, "Cargando");
+            }
+            @Override
+            public void End() {
+            }
+        }, 13000);
     }
 
     @Override
