@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/iltt_tv_rank"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -34,12 +34,12 @@
             android:textSize="14sp"
             app:fontFamily="sans-serif-condensed"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView4"
-            app:layout_constraintStart_toEndOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintEnd_toStartOf="@+id/iltt_btn_show_details"
+            app:layout_constraintStart_toEndOf="@+id/iltt_tv_duration"
+            app:layout_constraintTop_toBottomOf="@+id/iltt_tv_name_artist" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/iltt_tv_name_track"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -55,12 +55,12 @@
             android:textSize="22sp"
             android:textStyle="bold"
             app:fontFamily="sans-serif-condensed"
-            app:layout_constraintEnd_toStartOf="@+id/textView4"
+            app:layout_constraintEnd_toStartOf="@+id/iltt_btn_show_details"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/iltt_tv_name_artist"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -76,12 +76,12 @@
             android:textSize="18sp"
             android:textStyle="bold"
             app:fontFamily="sans-serif-condensed"
-            app:layout_constraintEnd_toStartOf="@+id/textView4"
+            app:layout_constraintEnd_toStartOf="@+id/iltt_btn_show_details"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/iltt_tv_name_track" />
 
         <Button
-            android:id="@+id/textView4"
+            android:id="@+id/iltt_btn_show_details"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:background="@drawable/btn_square_blue"
@@ -97,7 +97,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/iltt_tv_duration"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -106,14 +106,14 @@
             android:layout_marginBottom="15dp"
             android:gravity="center_vertical"
             android:singleLine="false"
-            android:text="Duration: 0:00"
+            android:text="Duration 0:00"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="14sp"
             app:fontFamily="sans-serif-condensed"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView6"
+            app:layout_constraintEnd_toStartOf="@+id/iltt_tv_rank"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/iltt_tv_name_artist" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

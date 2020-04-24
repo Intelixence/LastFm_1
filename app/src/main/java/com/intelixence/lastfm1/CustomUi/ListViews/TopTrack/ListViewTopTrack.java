@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.intelixence.lastfm1.R;
 
@@ -42,6 +44,23 @@ public class ListViewTopTrack extends BaseAdapter {
             LayoutInflater inflater = activity.getLayoutInflater();
             convertView = inflater.inflate(R.layout.item_listview_top_tracks, null);
         }
+
+        TextView tv_name_track = convertView.findViewById(R.id.iltt_tv_name_track);
+        TextView tv_name_artist = convertView.findViewById(R.id.iltt_tv_name_artist);
+        TextView tv_duration = convertView.findViewById(R.id.iltt_tv_duration);
+        TextView tv_rank = convertView.findViewById(R.id.iltt_tv_rank);
+        Button btn_show_details = convertView.findViewById(R.id.iltt_btn_show_details);
+
+        tv_name_track.setText(itemsTopTrack.get(position).getTrack_name());
+        tv_name_artist.setText(itemsTopTrack.get(position).getArtist_name());
+        tv_duration.setText("Duration "+itemsTopTrack.get(position).getTrack_duration());
+        tv_rank.setText("Rank "+itemsTopTrack.get(position).getRank_track());
+        btn_show_details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         return convertView;
     }
 }

@@ -2,9 +2,9 @@ package com.intelixence.lastfm1.Utils;
 
 public class CustomTime {
 
-    public static String minutes_seconds(int miliseconds){
-        long minutes = (miliseconds / 1000)  / 60;
-        int seconds = (int)((miliseconds / 1000) % 60);
-        return minutes+":"+seconds;
+    public static String minutes_seconds(int seconds){
+        long long_minutes = seconds/60;
+        int int_seconds = seconds%60;
+        return long_minutes+":"+int_seconds;
     }
 }
