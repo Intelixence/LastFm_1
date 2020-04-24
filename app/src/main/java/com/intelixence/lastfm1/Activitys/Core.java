@@ -50,7 +50,7 @@ public class Core extends AppCompatActivity implements EasyReq.Event {
         tv_url.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://www.last.fm");
+                Uri uri = Uri.parse("https://www.last.fm/");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
